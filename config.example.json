@@ -1,0 +1,29 @@
+{
+  "source": {
+    "region": "us-east-1",
+    "host": "source-rds.example.amazonaws.com",
+    "port": 1433,
+    "database": "sales",
+    "secret_id": "prod/migration/source-sqlserver",
+    "encrypt": true,
+    "trust_server_certificate": false
+  },
+  "target": {
+    "server": "contoso-sql.database.windows.net",
+    "database": "sales",
+    "tenant_id": "00000000-0000-0000-0000-000000000000",
+    "client_id": null,
+    "authentication": "managed_identity",
+    "encrypt": true,
+    "trust_server_certificate": false
+  },
+  "options": {
+    "schemas": ["dbo"],
+    "tables": [],
+    "batch_size": 5000,
+    "create_target_schema": true,
+    "truncate_target_tables": false,
+    "continue_on_error": false,
+    "verify_row_counts": true
+  }
+}
